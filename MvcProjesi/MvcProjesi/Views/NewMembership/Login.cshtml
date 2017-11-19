@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+@section scripts{
+    <style type="text/css">
+        #formKapsayici {
+            box-shadow: 0 0 5px gray;
+            padding: 25px;
+            height: 500px;
+        }
+
+        #divSol, #divSag {
+            float: left;
+            margin-left: 25px;
+        }
+
+        #divSol, #divSag {
+            margin-top: 15px;
+        }
+
+        input[type="text"] {
+            width: 250px;
+        }
+
+        #btnLogin {
+            clear: both;
+            display: block;
+            margin-left: 132px;
+            color: #F08080;
+        }
+
+        #divSonuc {
+            color: red;
+        }
+    </style>
+}
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+     $(function(){
+        $("#btnLogin").click(function () {
+            function Login() {
+                var username = $("#UserName").val();
+                var password = $("#Password").val();
+                $.ajax({
+                    url: "/NewMembership/Login",
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    data: "{'username':'" + username + "', 'password':'" + password + "'}",
+                    dataType: "html",
+                    success: function (response) {
+                        var object = JSON.parse(data.d);
+                        if (object.Error == '') {
+                            $("#response").html(object);
+                        }
+                    },
+                    error: function (error) {
+                        alert("Error: " + error);
+                    }
+                });
+            };
+        });
+     });
+
+</script>
+
+<h2>Login</h2>
+@using (Ajax.BeginForm("Login", "NewMembership", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "divSonuc" }, new { id = "formKapsayici" }))
+{
+    <div id="divSol">
+        @Html.Label("UserName")<br />
+        @Html.Label("Password")<br />
+    </div>
+    <div id="divSag">
+        : @Html.TextBox("UserName")<br />
+        : @Html.Password("Password")<br /> <br />
+    </div>
+    <input type="submit" class="btn-default" value="Login" id="btnLogin" onclick="Login()" />
+    <div id="divSonuc"></div>
+}

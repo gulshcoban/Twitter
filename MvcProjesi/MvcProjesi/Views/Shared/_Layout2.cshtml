@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#2a2a2a;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav nav-pills">
+                    <li class="navbar-brand" style="color:#F08080;font-family:Jokerman;font-size:xx-large;"><span style="font-size:24px;background-color:#2F2E2E;color:#F08080;" class="fa fa-smile-o"></span>StanielGuys</li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("Login", "Login", "NewMembership")</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+           <p>&copy; @DateTime.Now.Year - StanielGuys</p> 
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    <!--Ajax işlemleri için gereken dosyamızı burada tüm sayfalarda kullanılacak şekilde tanıttık.
+        Ayrıca dosyanın orijinal yolunu değil, bizim belirlediğimiz ~/bundles/jquery-unobtrusive
+        yolunun kullanıldığına dikkat edin.-->
+    @Scripts.Render("~/bundles/jquery-unobtrusive")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

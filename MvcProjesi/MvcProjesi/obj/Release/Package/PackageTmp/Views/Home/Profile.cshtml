@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Profile";
+}
+
+<link href="~/Css/Profil.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+    function SendTweet() {
+        var icerik = $("#tweet").val();
+        var dt = new Date();
+        var zaman = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+        $.ajax({
+            url: "/Home/Tweet",
+            type: "POST",
+            contentType: "application/json; charset=utf-8",
+            data: "{'Tweet':'" + icerik + "', 'Time':'" + zaman + "'}",
+            dataType: "html",
+            success: function (response) {
+                var object = JSON.parse(data.d);
+                if (object.Error == '') {
+                    $("#response").html(object);
+                }
+            }
+        });
+    };
+</script>
+<br />
+<div id="page" class="container">
+    <div id="header">
+        @{
+            @Html.Action("WhoseIsProfile")
+        }
+        @{
+            @Html.Action("NumberOfTweet")
+        }
+        @{ 
+            @Html.Action("NumberOfFollowed")
+        }
+        @{ 
+            @Html.Action("NumberOfFollower")
+        }
+    </div>
+    <div id="main">
+        <div id="banner">
+            <h2 style="color:#F08080; font-family:Comic Sans MS;"><i>TWEETS</i></h2>
+            <br />
+            <a href="#" style="width:1000px;"> @Html.TextArea("tweet", new { cols = "500", rows = "1" })</a>
+            <button class="btn-default" id="SendTweett" onclick="SendTweet()"><a href="/Home/Profile" style="color:#F08080;">@Html.Label("Send a tweet")</a></button>
+        <hr />
+        <div>
+
+            @{
+                @Html.Action("MemberTweets")
+            }
+
+        </div>
+    </div>
+</div>
+
+

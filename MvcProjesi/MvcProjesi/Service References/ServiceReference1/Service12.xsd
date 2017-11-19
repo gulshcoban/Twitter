@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfServiceTwitter" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfServiceTwitter" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfFollowed">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Followed" nillable="true" type="tns:Followed" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFollowed" nillable="true" type="tns:ArrayOfFollowed" />
+  <xs:complexType name="Followed">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FollowedID" type="xs:int" />
+      <xs:element minOccurs="0" name="FollowerID" type="xs:int" />
+      <xs:element minOccurs="0" name="MemberID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Followed" nillable="true" type="tns:Followed" />
+  <xs:complexType name="ArrayOfFollower">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Follower" nillable="true" type="tns:Follower" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFollower" nillable="true" type="tns:ArrayOfFollower" />
+  <xs:complexType name="Follower">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FollowedID" type="xs:int" />
+      <xs:element minOccurs="0" name="FollowerID" type="xs:int" />
+      <xs:element minOccurs="0" name="MemberID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Follower" nillable="true" type="tns:Follower" />
+  <xs:complexType name="ArrayOfMember">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Member" nillable="true" type="tns:Member" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMember" nillable="true" type="tns:ArrayOfMember" />
+  <xs:complexType name="Member">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MemberID" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Member" nillable="true" type="tns:Member" />
+  <xs:complexType name="ArrayOfTweet">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tweet" nillable="true" type="tns:Tweet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTweet" nillable="true" type="tns:ArrayOfTweet" />
+  <xs:complexType name="Tweet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MemberID" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TweetDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TweetID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Tweet" nillable="true" type="tns:Tweet" />
+</xs:schema>

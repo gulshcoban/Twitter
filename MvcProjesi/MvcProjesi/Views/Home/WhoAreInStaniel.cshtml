@@ -1,0 +1,24 @@
+﻿@model IEnumerable<MvcProjesi.ServiceReference1.Member>
+
+@{
+    ViewBag.Title = "WhoAreInStaniel";
+}
+<link href="~/Css/Profil.css" rel="stylesheet" />
+<h2>Who are in Staniel?</h2>
+<hr />
+@{
+    foreach (var item in Model)
+    {
+        <ul class="style1">
+            <li class="first">
+                <p class="date"><i style="color:#F08080;">@Html.DisplayFor(i => item.Name)</i></p>
+                <h3><a href="#"><b>@Html.DisplayFor(i => item.UserName)</b></a></h3>
+                <p>
+                    @Html.ActionLink("Follow", "FollowOfMember", new { id = item.MemberID })
+                </p>
+            </li>
+        </ul>
+        <hr />
+    }
+
+}

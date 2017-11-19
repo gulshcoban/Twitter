@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:54123/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:54123/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:54123/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfServiceTwitter" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_DeleteFollowed_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFollowed" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteFollowed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFollowedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteFollower_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFollower" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteFollower_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFollowerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetFollowerID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFollowerID" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetFollowerID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFollowerIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetFollowedID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFollowedID" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetFollowedID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFollowedIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetFollowed_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFollowed" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetFollowed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFollowedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetFollower_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFollower" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetFollower_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFollowerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTweet_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTweet" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTweet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTweetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NumberOfFav_InputMessage">
+    <wsdl:part name="parameters" element="tns:NumberOfFav" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NumberOfFav_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NumberOfFavResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NumberOfTweet_InputMessage">
+    <wsdl:part name="parameters" element="tns:NumberOfTweet" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NumberOfTweet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NumberOfTweetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NumberOfFollowed_InputMessage">
+    <wsdl:part name="parameters" element="tns:NumberOfFollowed" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NumberOfFollowed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NumberOfFollowedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NumberOfFollowers_InputMessage">
+    <wsdl:part name="parameters" element="tns:NumberOfFollowers" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NumberOfFollowers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NumberOfFollowersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetOtherMember_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOtherMember" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetOtherMember_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOtherMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMember_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMember" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMember_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MemberInsert_InputMessage">
+    <wsdl:part name="parameters" element="tns:MemberInsert" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MemberInsert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MemberInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_FollowedInsert_InputMessage">
+    <wsdl:part name="parameters" element="tns:FollowedInsert" />
+  </wsdl:message>
+  <wsdl:message name="IService1_FollowedInsert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FollowedInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_FollowerInsert_InputMessage">
+    <wsdl:part name="parameters" element="tns:FollowerInsert" />
+  </wsdl:message>
+  <wsdl:message name="IService1_FollowerInsert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FollowerInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TweetInsert_InputMessage">
+    <wsdl:part name="parameters" element="tns:TweetInsert" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TweetInsert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TweetInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_isRight_InputMessage">
+    <wsdl:part name="parameters" element="tns:isRight" />
+  </wsdl:message>
+  <wsdl:message name="IService1_isRight_OutputMessage">
+    <wsdl:part name="parameters" element="tns:isRightResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_isThereAnAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:isThereAnAccount" />
+  </wsdl:message>
+  <wsdl:message name="IService1_isThereAnAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:isThereAnAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TweetDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:TweetDelete" />
+  </wsdl:message>
+  <wsdl:message name="IService1_TweetDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TweetDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMemberID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMemberID" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMemberID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMemberIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MemberUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:MemberUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MemberUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MemberUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_FavInsert_InputMessage">
+    <wsdl:part name="parameters" element="tns:FavInsert" />
+  </wsdl:message>
+  <wsdl:message name="IService1_FavInsert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FavInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMemberTweet_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMemberTweet" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMemberTweet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMemberTweetResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="DeleteFollowed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteFollowed" message="tns:IService1_DeleteFollowed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteFollowedResponse" message="tns:IService1_DeleteFollowed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFollower">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteFollower" message="tns:IService1_DeleteFollower_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteFollowerResponse" message="tns:IService1_DeleteFollower_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFollowerID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetFollowerID" message="tns:IService1_GetFollowerID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetFollowerIDResponse" message="tns:IService1_GetFollowerID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFollowedID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetFollowedID" message="tns:IService1_GetFollowedID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetFollowedIDResponse" message="tns:IService1_GetFollowedID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFollowed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetFollowed" message="tns:IService1_GetFollowed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetFollowedResponse" message="tns:IService1_GetFollowed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFollower">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetFollower" message="tns:IService1_GetFollower_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetFollowerResponse" message="tns:IService1_GetFollower_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTweet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetTweet" message="tns:IService1_GetTweet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetTweetResponse" message="tns:IService1_GetTweet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NumberOfFav">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/NumberOfFav" message="tns:IService1_NumberOfFav_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/NumberOfFavResponse" message="tns:IService1_NumberOfFav_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NumberOfTweet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/NumberOfTweet" message="tns:IService1_NumberOfTweet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/NumberOfTweetResponse" message="tns:IService1_NumberOfTweet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NumberOfFollowed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/NumberOfFollowed" message="tns:IService1_NumberOfFollowed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/NumberOfFollowedResponse" message="tns:IService1_NumberOfFollowed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NumberOfFollowers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/NumberOfFollowers" message="tns:IService1_NumberOfFollowers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/NumberOfFollowersResponse" message="tns:IService1_NumberOfFollowers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOtherMember">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetOtherMember" message="tns:IService1_GetOtherMember_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetOtherMemberResponse" message="tns:IService1_GetOtherMember_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMember">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetMember" message="tns:IService1_GetMember_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetMemberResponse" message="tns:IService1_GetMember_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MemberInsert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/MemberInsert" message="tns:IService1_MemberInsert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/MemberInsertResponse" message="tns:IService1_MemberInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FollowedInsert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/FollowedInsert" message="tns:IService1_FollowedInsert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/FollowedInsertResponse" message="tns:IService1_FollowedInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FollowerInsert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/FollowerInsert" message="tns:IService1_FollowerInsert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/FollowerInsertResponse" message="tns:IService1_FollowerInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TweetInsert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/TweetInsert" message="tns:IService1_TweetInsert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TweetInsertResponse" message="tns:IService1_TweetInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="isRight">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/isRight" message="tns:IService1_isRight_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/isRightResponse" message="tns:IService1_isRight_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="isThereAnAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/isThereAnAccount" message="tns:IService1_isThereAnAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/isThereAnAccountResponse" message="tns:IService1_isThereAnAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TweetDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/TweetDelete" message="tns:IService1_TweetDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TweetDeleteResponse" message="tns:IService1_TweetDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetMemberID" message="tns:IService1_GetMemberID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetMemberIDResponse" message="tns:IService1_GetMemberID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MemberUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/MemberUpdate" message="tns:IService1_MemberUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/MemberUpdateResponse" message="tns:IService1_MemberUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FavInsert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/FavInsert" message="tns:IService1_FavInsert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/FavInsertResponse" message="tns:IService1_FavInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberTweet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetMemberTweet" message="tns:IService1_GetMemberTweet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetMemberTweetResponse" message="tns:IService1_GetMemberTweet_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DeleteFollowed">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteFollowed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFollower">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteFollower" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFollowerID">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetFollowerID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFollowedID">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetFollowedID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFollowed">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetFollowed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFollower">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetFollower" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTweet">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetTweet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NumberOfFav">
+      <soap:operation soapAction="http://tempuri.org/IService1/NumberOfFav" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NumberOfTweet">
+      <soap:operation soapAction="http://tempuri.org/IService1/NumberOfTweet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NumberOfFollowed">
+      <soap:operation soapAction="http://tempuri.org/IService1/NumberOfFollowed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NumberOfFollowers">
+      <soap:operation soapAction="http://tempuri.org/IService1/NumberOfFollowers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOtherMember">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetOtherMember" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMember">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetMember" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberInsert">
+      <soap:operation soapAction="http://tempuri.org/IService1/MemberInsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FollowedInsert">
+      <soap:operation soapAction="http://tempuri.org/IService1/FollowedInsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FollowerInsert">
+      <soap:operation soapAction="http://tempuri.org/IService1/FollowerInsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TweetInsert">
+      <soap:operation soapAction="http://tempuri.org/IService1/TweetInsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isRight">
+      <soap:operation soapAction="http://tempuri.org/IService1/isRight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isThereAnAccount">
+      <soap:operation soapAction="http://tempuri.org/IService1/isThereAnAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TweetDelete">
+      <soap:operation soapAction="http://tempuri.org/IService1/TweetDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberID">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetMemberID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberUpdate">
+      <soap:operation soapAction="http://tempuri.org/IService1/MemberUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FavInsert">
+      <soap:operation soapAction="http://tempuri.org/IService1/FavInsert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberTweet">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetMemberTweet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:54123/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

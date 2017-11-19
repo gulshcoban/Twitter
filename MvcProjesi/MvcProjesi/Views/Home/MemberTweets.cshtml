@@ -1,0 +1,19 @@
+﻿@model IEnumerable<MvcProjesi.ServiceReference1.Tweet>
+
+ @{
+
+        foreach (var item in Model)
+        {
+            <ul class="style1">
+                <li class="first">
+                    <p class="date"><i style="color:#F08080;">@Html.DisplayFor(i => item.TweetDate)</i></p>
+                    <h3><a href="#"><b>@Html.DisplayFor(i => Session["memberName"])</b></a></h3>
+                    <p>
+                        @Html.DisplayFor(i => item.Content) <br />
+                        @Html.ActionLink("Delete", "TweetDelete", new { id = item.TweetID })
+                    </p>
+                </li>
+            </ul>
+        }
+
+    }

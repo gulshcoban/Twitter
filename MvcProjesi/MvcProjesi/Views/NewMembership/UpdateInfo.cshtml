@@ -1,0 +1,94 @@
+﻿@model MvcProjesi.ServiceReference1.Member
+
+@{
+    ViewBag.Title = "UpdateInfo";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+@section scripts{
+    <style type="text/css">
+        #formKapsayici {
+            box-shadow: 0 0 5px gray;
+            padding: 25px;
+            height: 500px;
+        }
+
+        #divSol, #divSag {
+            float: left;
+            margin-left: 25px;
+        }
+
+        #divSol, #divSag {
+            margin-top: 15px;
+        }
+
+        input[type="text"] {
+            width: 250px;
+        }
+
+        #btnSave {
+            clear: both;
+            display: block;
+            margin-left: 132px;
+            color: #F08080;
+        }
+    </style>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#btnUyeOl").click(function () {
+                function Save(){
+                var name = $("#Name").val();
+                var username = $("UserName").val();
+                var email = $("#Email").val();
+                var password = $("#Password").val();
+                $.ajax({
+                    url: "/NewMembership/UpdateInfo",
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    data: "{'Ad':'" + name + "', 'UserName':'" + username + "', 'email':'" + email + "', 'password':'" + password + "'}",
+                    dataType: "html",
+                    success: function (response) {
+                        var object = JSON.parse(data.d);
+                        if (object.Error == '') {
+                            $("#response").html(object);
+                        }
+                    },
+                    error: function (error) {
+                        alert("Error: " + error);
+                    }
+
+                });
+                };
+            });
+        });
+    </script>
+}
+@Html.Raw(TempData["alert"])
+<h2>Update The Info</h2>
+@using (Html.BeginForm("UpdateInfo", "NewMembership", FormMethod.Post, new { enctype = "multipart/form-data", id = "formKapsayici" }))
+{
+    <div id="divSol">
+        @Html.Label("Name")<br /><br />
+        @Html.Label("UserName")<br /><br />
+        @Html.Label("Email")<br /><br />
+        @Html.Label("Password")<br /><br />
+    </div>
+    <div id="divSag">
+        : @Html.TextBox("Name")<br /><br />
+        : @Html.TextBox("UserName")<br /><br />
+        : @Html.TextBox("Email")<br /><br />
+        : @Html.Password("Password")<br /><br />
+
+    </div>
+
+    <input type="submit" class="btn-default" value="Save" id="btnSave" onclick="Save()" />
+    <br />
+    <div>
+        <a style="color:#F08080;" href="/Home/Profile"><b>Go to the profile</b></a>
+    </div>
+
+    @Html.ValidationSummary()
+}

@@ -1,0 +1,17 @@
+﻿@model IEnumerable<int>
+
+@{
+    ViewBag.Title = "NumberOfFollowed";
+}
+@{
+    foreach (var item in Model)
+    {
+        <div id="header">
+            <div id="menu" style="margin-bottom:0em;">
+                <ul style="margin-bottom:0em;">
+                    <li style="list-style-type:none;"><a href="/Home/FollowedMember" accesskey="1" title="" style="color:#F08080">Followed<span class="badge">@Html.DisplayFor(i => item)</span></a></li>
+                </ul>
+            </div>
+        </div>
+    }
+}

@@ -1,0 +1,18 @@
+﻿@model IEnumerable<int>
+
+@{
+    ViewBag.Title = "NumberOfTweet";
+}
+@{
+    foreach (var item in Model)
+    {
+        <div id="header">
+        <div id="menu">
+            <ul>
+                <li style="list-style-type:none;"><a href="/NewMembership/UpdateInfo" style="color:#F08080;">Update The Info</a></li>
+                <li style="list-style-type:none;"><a href="/Home/Profile" accesskey="1" title="" style="color:#F08080">Number Of Tweets<span class="badge">@Html.DisplayFor(i => item)</span></a></li>
+             </ul>
+        </div>
+        </div>
+    }
+}

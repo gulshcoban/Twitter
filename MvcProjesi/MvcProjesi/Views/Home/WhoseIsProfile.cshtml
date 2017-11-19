@@ -1,0 +1,19 @@
+﻿@model IEnumerable<MvcProjesi.ServiceReference1.Member>
+@{
+    ViewBag.Title = "WhoseIsProfile";
+}
+
+@{
+    foreach (var item in Model)
+    {
+        <div id="header">
+            <div id="logo" style="margin-bottom:0em;">
+                <h1>
+                    <a href="/Home/Profile" style="color:#F08080; font-family:Jokerman;">
+                        @Html.DisplayFor(i => item.UserName)
+                    </a>
+                </h1>
+            </div>
+        </div>
+    }
+}
